@@ -39,30 +39,40 @@ class Example(QWidget):
 
         self.questionTypeLabel = QLabel("Category")
         self.questionTypeCBox = QComboBox()
-        #self.optionsSpacer1 = QSpacerItem()
         self.questionTypeCBox.addItems(self.options.categories)
         self.questionLevelLabel = QLabel("JFBP Level")
-        self.levelCBox = QComboBox()
+        self.questionLevelCBox = QComboBox()
+        self.questionLevelCBox.addItems(self.options.jfbpLevels)
         self.questionKanaLabel = QLabel("Kana")
         self.kanaCBox = QComboBox()
-
-        #print(type(QSizePolicy.Minimum))
-        #self.questionTypeLabel.setSizePolicy(QSizePolicy.Minimum)
 
         self.optionsHBox.addWidget(self.questionTypeLabel)
         self.optionsHBox.addWidget(self.questionTypeCBox)
         self.optionsHBox.addStretch(1)
         self.optionsHBox.addWidget(self.questionLevelLabel)
-        self.optionsHBox.addWidget(self.levelCBox)
+        self.optionsHBox.addWidget(self.questionLevelCBox)
         self.optionsHBox.addStretch(1)
         self.optionsHBox.addWidget(self.questionKanaLabel)
         self.optionsHBox.addWidget(self.kanaCBox)
 
         self.questionBox = QLineEdit()
+        #self.questionBox.setFont()
         self.questionBox.setSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum)
         self.questionHBox.addWidget(self.questionBox)
 
-        #self.optionsHBox.addItem(self.optionsSpacer1)
+        self.answerBox = QLineEdit()
+        self.answerBox.setSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum)
+        self.answerHBox.addWidget(self.answerBox)
+
+        self.hintButton = QPushButton("Hint")
+        self.revealButton = QPushButton("Reveal")
+        self.correctButton = QPushButton("Correct")
+        self.wrongButton = QPushButton("Incorrect")
+
+        self.interactionHBox.addWidget(self.hintButton)
+        self.interactionHBox.addWidget(self.revealButton)
+        self.interactionHBox.addWidget(self.correctButton)
+        self.interactionHBox.addWidget(self.wrongButton)
 
 
     def initUI(self):
